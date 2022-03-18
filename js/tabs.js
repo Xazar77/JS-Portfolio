@@ -4,9 +4,8 @@ const tabs = () => {
     const tabItem = document.querySelectorAll('.design__descr')
     const tabImages = document.querySelectorAll('.design-images')
     const designBlock = document.querySelectorAll('.design-block > img')
-    const title = document.querySelector('title')
     const sectionTitle = document.querySelectorAll('.design__title')
-    console.log(sectionTitle)
+    console.log(document.title)
 
     const changeArray = (array, value) => {
         array.forEach(item => {
@@ -19,7 +18,7 @@ const tabs = () => {
 
     }
 
-    tabButtons.forEach((btn, index) => {
+    tabButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
 
             const datavalue = btn.dataset.tabsHandler  // Лучше использовать data атрибуты, а не index
@@ -30,11 +29,11 @@ const tabs = () => {
             changeArray(sectionTitle, datavalue)
  
 
-            tabButtons.forEach(btn => {
+            tabButtons.forEach((btn, index) => {
                 
                 if (btn === e.target) {
                     btn.classList.add('design-list__item_active')
-                    title.textContent = btn.textContent
+                    document.title = sectionTitle[index].textContent
                 } else {
                     btn.classList.remove('design-list__item_active')
                 }
