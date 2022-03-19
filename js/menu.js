@@ -10,7 +10,8 @@ const menu = () => {
         if (e.target === burger) {
             menu.classList.toggle('menu-active')
         }
-        if (e.target !== burger) {
+        
+        if (!(e.target === menu || e.target === burger)) {
             menu.classList.remove('menu-active')
         }
         
