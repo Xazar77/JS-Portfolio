@@ -5,7 +5,6 @@ const tabs = () => {
     const tabImages = document.querySelectorAll('.design-images')
     const designBlock = document.querySelectorAll('.design-block > img')
     const sectionTitle = document.querySelectorAll('.design__title')
-    console.log(document.title)
 
     const changeArray = (array, value) => {
         array.forEach(item => {
