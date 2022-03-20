@@ -7,11 +7,11 @@ const menu = () => {
     
     document.addEventListener('click', (e) => {
         e.stopPropagation()
-        if (e.target === burger) {
+        if (e.target === burger ) {
             menu.classList.toggle('menu-active')
         }
         
-        if (!(e.target === menu || e.target === burger)) {
+        if (!(e.target.closest('.menu') || e.target.closest('.humburger-menu')) || e.target.closest('.menu-list__link')) {
             menu.classList.remove('menu-active')
         }
         
